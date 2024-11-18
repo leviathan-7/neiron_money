@@ -1,0 +1,14 @@
+services:
+  yolo:
+    container_name: yolov8n_container
+    image: yolov8n
+    env_file:
+      - .env
+    build:
+      context: ./yolov8n
+    ports:
+      - "8000:8000"
+    volumes:
+      - ${DATASET_PATH}:/app/dataset
+      - ${SCRIPTS_PATH}:/app/scripts
+      - ${OUTPUT_PATH}:/app/output
