@@ -1,7 +1,8 @@
 services:
   yolo:
-    container_name: yolov8n_container
-    image: yolov8n
+    command: test
+    container_name: yolov8n
+    image: yolov8n_image
     env_file:
       - .env
     build:
@@ -12,3 +13,12 @@ services:
       - ${DATASET_PATH}:/app/dataset
       - ${SCRIPTS_PATH}:/app/scripts
       - ${OUTPUT_PATH}:/app/output
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities:
+              - gpu
+              - utility # nvidia-smi
+              - compute # CUDA
