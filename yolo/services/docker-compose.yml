@@ -1,13 +1,13 @@
 services:
   yolo:
-    command: train
+    command: test
     container_name: yolov8n
     image: yolov8n_image
     env_file:
       - .env
     build:
       context: ./yolov8n
-    shm_size: '2gb'
+    shm_size: '3.5gb'
     ports:
       - "8000:8000"
     volumes:

@@ -1,0 +1,334 @@
+C:\Data\content\mmcs\masters_degree\semester_3\nnmobile\lab3\neiron_money\yolo\services>run.bat
+[+] Running 1/1
+ ✔ Container yolov8n  Started                                                                                                                                                                                 0.6s
+yolov8n  | 2024-11-20T22:30:57.071508356Z Start training
+yolov8n  | 2024-11-20T22:30:58.029337249Z Creating new Ultralytics Settings v0.0.6 file ✅
+yolov8n  | 2024-11-20T22:30:58.029375888Z View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+yolov8n  | 2024-11-20T22:30:58.029381126Z Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+yolov8n  | 2024-11-20T22:30:58.056964338Z Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt'...
+100%|██████████| 6.25M/6.25M [00:00<00:00, 8.72MB/s]
+yolov8n  | 2024-11-20T22:31:00.479488365Z Ultralytics 8.3.34 🚀 Python-3.8.10 torch-1.12.1+cu113 CUDA:0 (NVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096MiB)
+yolov8n  | 2024-11-20T22:31:00.479523692Z WARNING ⚠️ Upgrade to torch>=2.0.0 for deterministic training.
+yolov8n  | 2024-11-20T22:31:00.523784745Z engine/trainer: task=detect, mode=train, model=yolov8n.pt, data=/app/dataset/data.yaml, epochs=50, time=None, patience=100, batch=12, imgsz=416, save=True, save_period=-1, cache=False, device=0, workers=8, project=/app/output, name=train, exist_ok=True, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/app/output/train
+yolov8n  | 2024-11-20T22:31:01.437381290Z Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...
+100%|██████████| 755k/755k [00:00<00:00, 3.76MB/s]
+yolov8n  | 2024-11-20T22:31:02.775657247Z Overriding model.yaml nc=80 with nc=3
+yolov8n  | 2024-11-20T22:31:02.775695076Z
+yolov8n  | 2024-11-20T22:31:02.775700204Z                    from  n    params  module                                       arguments
+yolov8n  | 2024-11-20T22:31:02.776684814Z   0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.777298123Z   1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.779272821Z   2                  -1  1      7360  ultralytics.nn.modules.block.C2f             [32, 32, 1, True]
+yolov8n  | 2024-11-20T22:31:02.779954190Z   3                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.782709481Z   4                  -1  2     49664  ultralytics.nn.modules.block.C2f             [64, 64, 2, True]
+yolov8n  | 2024-11-20T22:31:02.783312154Z   5                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.785877842Z   6                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]
+yolov8n  | 2024-11-20T22:31:02.787941405Z   7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.791769276Z   8                  -1  1    460288  ultralytics.nn.modules.block.C2f             [256, 256, 1, True]
+yolov8n  | 2024-11-20T22:31:02.793350316Z   9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+yolov8n  | 2024-11-20T22:31:02.793500627Z  10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+yolov8n  | 2024-11-20T22:31:02.793624302Z  11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+yolov8n  | 2024-11-20T22:31:02.796537083Z  12                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]
+yolov8n  | 2024-11-20T22:31:02.796654607Z  13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+yolov8n  | 2024-11-20T22:31:02.796740554Z  14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+yolov8n  | 2024-11-20T22:31:02.798081364Z  15                  -1  1     37248  ultralytics.nn.modules.block.C2f             [192, 64, 1]
+yolov8n  | 2024-11-20T22:31:02.798562482Z  16                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.798778516Z  17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+yolov8n  | 2024-11-20T22:31:02.801173434Z  18                  -1  1    123648  ultralytics.nn.modules.block.C2f             [192, 128, 1]
+yolov8n  | 2024-11-20T22:31:02.802399631Z  19                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+yolov8n  | 2024-11-20T22:31:02.802418298Z  20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+yolov8n  | 2024-11-20T22:31:02.806967750Z  21                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]
+yolov8n  | 2024-11-20T22:31:02.815398289Z  22        [15, 18, 21]  1    751897  ultralytics.nn.modules.head.Detect           [3, [64, 128, 256]]
+yolov8n  | 2024-11-20T22:31:02.892527837Z Model summary: 225 layers, 3,011,433 parameters, 3,011,417 gradients, 8.2 GFLOPs
+yolov8n  | 2024-11-20T22:31:02.892551326Z
+yolov8n  | 2024-11-20T22:31:02.913024907Z Transferred 319/355 items from pretrained weights
+yolov8n  | 2024-11-20T22:31:04.229179449Z TensorBoard: Start with 'tensorboard --logdir /app/output/train', view at http://localhost:6006/
+yolov8n  | 2024-11-20T22:31:06.089098218Z Freezing layer 'model.22.dfl.conv.weight'
+yolov8n  | 2024-11-20T22:31:06.089516300Z AMP: running Automatic Mixed Precision (AMP) checks...
+yolov8n  | 2024-11-20T22:31:06.090158548Z Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt to 'yolo11n.pt'...
+100%|██████████| 5.35M/5.35M [00:00<00:00, 9.24MB/s]
+yolov8n  | 2024-11-20T22:31:10.417397218Z AMP: checks passed ✅
+train: Scanning /app/dataset/train/labels.cache... 6126 images, 7 backgrounds, 0 corrupt: 100%|██████████| 6126/6126 [00:00<?, ?it/s]
+yolov8n  | 2024-11-20T22:31:31.652342148Z train: WARNING ⚠️ /app/dataset/train/images/credit-card_106_jpeg_jpg.rf.0385378edf6fb248a447d65e6c970167.jpg: 1 duplicate labels removed
+yolov8n  | 2024-11-20T22:31:31.652380116Z train: WARNING ⚠️ /app/dataset/train/images/credit-card_106_jpeg_jpg.rf.3f88465507a489e57531ed146c8baadb.jpg: 1 duplicate labels removed
+yolov8n  | 2024-11-20T22:31:31.652384238Z train: WARNING ⚠️ /app/dataset/train/images/credit-card_106_jpeg_jpg.rf.4f7e40a1b8c0786871cbb19be6fd669f.jpg: 1 duplicate labels removed
+yolov8n  | 2024-11-20T22:31:31.652386242Z train: WARNING ⚠️ /app/dataset/train/images/credit-card_106_jpeg_jpg.rf.d89f1c640fa4ed9814caf942cf5114d8.jpg: 1 duplicate labels removed
+yolov8n  | 2024-11-20T22:31:31.660224446Z WARNING ⚠️ Box and segment counts should be equal, but got len(segments) = 381, len(boxes) = 20423. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+val: Scanning /app/dataset/valid/labels.cache... 593 images, 0 backgrounds, 0 corrupt: 100%|██████████| 593/593 [00:00<?, ?it/s]
+yolov8n  | 2024-11-20T22:31:34.821065781Z WARNING ⚠️ Box and segment counts should be equal, but got len(segments) = 55, len(boxes) = 1172. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+yolov8n  | 2024-11-20T22:31:35.678172072Z Plotting labels to /app/output/train/labels.jpg...
+yolov8n  | 2024-11-20T22:31:38.504198926Z optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+yolov8n  | 2024-11-20T22:31:38.506079750Z optimizer: AdamW(lr=0.001429, momentum=0.9) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.00046875), 63 bias(decay=0.0)
+yolov8n  | 2024-11-20T22:31:40.935707439Z TensorBoard: model graph visualization added ✅
+yolov8n  | 2024-11-20T22:31:40.938490552Z Image sizes 416 train, 416 val
+yolov8n  | 2024-11-20T22:31:40.938545065Z Using 8 dataloader workers
+yolov8n  | 2024-11-20T22:31:40.938553770Z Logging results to /app/output/train
+yolov8n  | 2024-11-20T22:31:40.938555598Z Starting training for 50 epochs...
+yolov8n  | 2024-11-20T22:31:40.951038395Z
+yolov8n  | 2024-11-20T22:31:40.951054602Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       1/50     0.841G     0.6682      1.195      1.108         74        416: 100%|██████████| 511/511 [00:47<00:00, 10.69it/s]55/511 [00:43<00:04, 11.66it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.36it/s]
+yolov8n  | 2024-11-20T22:32:32.257147154Z                    all        593       1172      0.652      0.694      0.696      0.474
+yolov8n  | 2024-11-20T22:32:32.804226868Z
+yolov8n  | 2024-11-20T22:32:32.804275032Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       2/50     0.952G     0.6236     0.7476      1.066         49        416: 100%|██████████| 511/511 [00:56<00:00,  8.98it/s]60/511 [00:51<00:05,  9.34it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.29it/s]
+yolov8n  | 2024-11-20T22:33:33.187510552Z                    all        593       1172      0.837      0.781      0.825      0.611
+yolov8n  | 2024-11-20T22:33:33.610191296Z
+yolov8n  | 2024-11-20T22:33:33.610239287Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       3/50     0.818G     0.6052     0.6752       1.06         39        416: 100%|██████████| 511/511 [00:49<00:00, 10.31it/s]91/511 [00:48<00:01, 12.74it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:02<00:00,  9.51it/s]
+yolov8n  | 2024-11-20T22:34:25.821415653Z                    all        593       1172      0.613      0.607      0.643      0.453
+yolov8n  | 2024-11-20T22:34:26.176968272Z
+yolov8n  | 2024-11-20T22:34:26.177032263Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       4/50     0.952G     0.5839     0.6309      1.051         36        416: 100%|██████████| 511/511 [00:39<00:00, 12.97it/s]72/511 [00:36<00:03, 12.97it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:02<00:00,  8.66it/s]
+yolov8n  | 2024-11-20T22:35:08.509258108Z                    all        593       1172       0.47      0.679      0.614      0.453
+yolov8n  | 2024-11-20T22:35:08.893182922Z
+yolov8n  | 2024-11-20T22:35:08.893246166Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       5/50     0.883G     0.5596     0.5871      1.038         35        416: 100%|██████████| 511/511 [00:40<00:00, 12.70it/s]72/511 [00:37<00:02, 13.30it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:02<00:00,  9.29it/s]
+yolov8n  | 2024-11-20T22:35:51.836631819Z                    all        593       1172      0.874      0.825      0.876      0.659
+yolov8n  | 2024-11-20T22:35:52.267835611Z
+yolov8n  | 2024-11-20T22:35:52.267878699Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       6/50     0.965G     0.5505     0.5629      1.031         67        416: 100%|██████████| 511/511 [00:49<00:00, 10.33it/s]4-11-20T22:35:58.763611154Z /s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  8.04it/s]
+yolov8n  | 2024-11-20T22:36:44.892823624Z                    all        593       1172      0.902       0.78      0.854      0.706
+yolov8n  | 2024-11-20T22:36:45.271804119Z
+yolov8n  | 2024-11-20T22:36:45.271868124Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       7/50     0.849G     0.5325     0.5357      1.022         38        416: 100%|██████████| 511/511 [00:39<00:00, 12.85it/s]71/511 [00:36<00:03, 12.61it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:02<00:00,  9.29it/s]
+yolov8n  | 2024-11-20T22:37:27.756541754Z                    all        593       1172      0.806      0.783      0.824      0.616
+yolov8n  | 2024-11-20T22:37:28.094098568Z
+yolov8n  | 2024-11-20T22:37:28.094145498Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       8/50     0.944G     0.5259      0.523      1.017         44        416: 100%|██████████| 511/511 [00:40<00:00, 12.68it/s]72/511 [00:37<00:03, 11.87it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:02<00:00,  9.38it/s]
+yolov8n  | 2024-11-20T22:38:11.083231775Z                    all        593       1172      0.813      0.762      0.815      0.619
+yolov8n  | 2024-11-20T22:38:11.425767411Z
+yolov8n  | 2024-11-20T22:38:11.425819734Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+       9/50     0.923G     0.5176     0.5118      1.015         40        416: 100%|██████████| 511/511 [00:41<00:00, 12.45it/s]72/511 [00:37<00:03, 12.55it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.62it/s]
+yolov8n  | 2024-11-20T22:38:55.780384128Z                    all        593       1172      0.877       0.81      0.874      0.683
+yolov8n  | 2024-11-20T22:38:56.138216810Z
+yolov8n  | 2024-11-20T22:38:56.138258758Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      10/50     0.895G     0.5134     0.5049      1.015         27        416: 100%|██████████| 511/511 [00:55<00:00,  9.13it/s]96/511 [00:54<00:01,  9.30it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.37it/s]
+yolov8n  | 2024-11-20T22:39:55.508304879Z                    all        593       1172      0.897      0.825      0.891      0.703
+yolov8n  | 2024-11-20T22:39:55.921258559Z
+yolov8n  | 2024-11-20T22:39:55.921308937Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      11/50     0.908G     0.4885     0.4761      1.001         46        416: 100%|██████████| 511/511 [00:55<00:00,  9.25it/s]52/511 [00:49<00:06,  9.26it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.47it/s]
+yolov8n  | 2024-11-20T22:40:54.559075887Z                    all        593       1172      0.865      0.802      0.864      0.702
+yolov8n  | 2024-11-20T22:40:54.895170495Z
+yolov8n  | 2024-11-20T22:40:54.895224643Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      12/50     0.839G     0.4937     0.4726     0.9984         33        416: 100%|██████████| 511/511 [00:55<00:00,  9.29it/s]-20T22:41:02.404048605Z 33it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.51it/s]
+yolov8n  | 2024-11-20T22:41:53.269947970Z                    all        593       1172       0.83      0.801      0.881      0.718
+yolov8n  | 2024-11-20T22:41:53.722995977Z
+yolov8n  | 2024-11-20T22:41:53.723043186Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      13/50     0.902G     0.4995     0.4769      1.005         38        416: 100%|██████████| 511/511 [00:55<00:00,  9.25it/s] 507/511 [00:54<00:00,  9.17it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.40it/s]
+yolov8n  | 2024-11-20T22:42:52.374184862Z                    all        593       1172      0.909      0.826      0.891      0.712
+yolov8n  | 2024-11-20T22:42:52.714091224Z
+yolov8n  | 2024-11-20T22:42:52.714136029Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      14/50     0.956G     0.4906     0.4668     0.9987         31        416: 100%|██████████| 511/511 [00:59<00:00,  8.62it/s]76/511 [00:55<00:04,  8.71it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  6.39it/s]
+yolov8n  | 2024-11-20T22:43:55.907599553Z                    all        593       1172      0.922      0.821      0.903       0.74
+yolov8n  | 2024-11-20T22:43:56.417117996Z
+yolov8n  | 2024-11-20T22:43:56.417163628Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      15/50     0.858G     0.4901     0.4659          1         33        416: 100%|██████████| 511/511 [00:57<00:00,  8.93it/s]74/511 [00:53<00:04,  8.98it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  6.71it/s]
+yolov8n  | 2024-11-20T22:44:57.404654955Z                    all        593       1172       0.92      0.853      0.915      0.755
+yolov8n  | 2024-11-20T22:44:57.884682895Z
+yolov8n  | 2024-11-20T22:44:57.884732207Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      16/50     0.835G     0.4809     0.4473     0.9935         22        416: 100%|██████████| 511/511 [00:56<00:00,  8.97it/s]74/511 [00:53<00:03,  9.37it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.12it/s]
+yolov8n  | 2024-11-20T22:45:58.354421735Z                    all        593       1172      0.901      0.847      0.908      0.742
+yolov8n  | 2024-11-20T22:45:58.784126061Z
+yolov8n  | 2024-11-20T22:45:58.784175682Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      17/50     0.937G     0.4801     0.4453     0.9949         46        416: 100%|██████████| 511/511 [00:56<00:00,  9.05it/s]82/511 [00:53<00:03,  8.75it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.15it/s]
+yolov8n  | 2024-11-20T22:46:58.744514282Z                    all        593       1172      0.909      0.855      0.915      0.754
+yolov8n  | 2024-11-20T22:46:59.111609684Z
+yolov8n  | 2024-11-20T22:46:59.111710693Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      18/50      1.01G     0.4713     0.4408      0.989         22        416: 100%|██████████| 511/511 [00:54<00:00,  9.31it/s] 459/511 [00:49<00:05,  9.50it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.60it/s]
+yolov8n  | 2024-11-20T22:47:57.333768863Z                    all        593       1172      0.873      0.832      0.888      0.754
+yolov8n  | 2024-11-20T22:47:57.671086934Z
+yolov8n  | 2024-11-20T22:47:57.671133974Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      19/50     0.858G     0.4706     0.4345     0.9876         39        416: 100%|██████████| 511/511 [00:54<00:00,  9.32it/s]63/511 [00:49<00:05,  9.47it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.71it/s]
+yolov8n  | 2024-11-20T22:48:55.748904287Z                    all        593       1172      0.867      0.788       0.86      0.707
+yolov8n  | 2024-11-20T22:48:56.079103903Z
+yolov8n  | 2024-11-20T22:48:56.079144351Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      20/50     0.973G     0.4642      0.427     0.9821         23        416: 100%|██████████| 511/511 [00:54<00:00,  9.32it/s]3.636992736Z <00:04,  9.25it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.58it/s]
+yolov8n  | 2024-11-20T22:49:54.202253320Z                    all        593       1172      0.868      0.864      0.906       0.76
+yolov8n  | 2024-11-20T22:49:54.592733968Z
+yolov8n  | 2024-11-20T22:49:54.592791360Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      21/50     0.902G     0.4591     0.4197     0.9822         27        416: 100%|██████████| 511/511 [00:54<00:00,  9.35it/s]024-11-20T22:50:02.032845533Z ]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  6.99it/s]
+yolov8n  | 2024-11-20T22:50:52.826946646Z                    all        593       1172      0.888       0.86      0.909      0.758
+yolov8n  | 2024-11-20T22:50:53.182440416Z
+yolov8n  | 2024-11-20T22:50:53.182479917Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      22/50      1.03G     0.4586     0.4169      0.981         42        416: 100%|██████████| 511/511 [00:55<00:00,  9.17it/s]11-20T22:51:00.402387033Z it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.39it/s]
+yolov8n  | 2024-11-20T22:51:52.338690214Z                    all        593       1172      0.905      0.847        0.9      0.757
+yolov8n  | 2024-11-20T22:51:52.712174726Z
+yolov8n  | 2024-11-20T22:51:52.712217085Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      23/50     0.923G     0.4512     0.4115     0.9798         45        416: 100%|██████████| 511/511 [00:54<00:00,  9.29it/s]59/511 [00:49<00:05,  9.61it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.52it/s]
+yolov8n  | 2024-11-20T22:52:51.044369739Z                    all        593       1172      0.895      0.831      0.902      0.753
+yolov8n  | 2024-11-20T22:52:51.420116714Z
+yolov8n  | 2024-11-20T22:52:51.420158832Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      24/50     0.904G     0.4495     0.4042     0.9794         47        416: 100%|██████████| 511/511 [00:54<00:00,  9.31it/s]2:59.092960450Z :04,  9.25it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.40it/s]
+yolov8n  | 2024-11-20T22:53:49.698819902Z                    all        593       1172        0.9      0.788      0.902      0.752
+yolov8n  | 2024-11-20T22:53:50.054116847Z
+yolov8n  | 2024-11-20T22:53:50.054190385Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      25/50     0.858G      0.446     0.4012     0.9763         31        416: 100%|██████████| 511/511 [00:55<00:00,  9.27it/s]57.682109156Z 00:05,  9.45it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.32it/s]
+yolov8n  | 2024-11-20T22:54:48.620835181Z                    all        593       1172      0.893      0.869       0.92      0.758
+yolov8n  | 2024-11-20T22:54:48.958343147Z
+yolov8n  | 2024-11-20T22:54:48.958384686Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      26/50      0.83G     0.4445     0.3969     0.9767         26        416: 100%|██████████| 511/511 [00:55<00:00,  9.27it/s]65/511 [00:50<00:04,  9.53it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.48it/s]
+yolov8n  | 2024-11-20T22:55:47.435693957Z                    all        593       1172      0.901      0.878      0.924      0.787
+yolov8n  | 2024-11-20T22:55:47.842387371Z
+yolov8n  | 2024-11-20T22:55:47.842423983Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      27/50     0.845G     0.4428     0.3988     0.9758         32        416: 100%|██████████| 511/511 [00:55<00:00,  9.26it/s]56/511 [00:49<00:05,  9.34it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.41it/s]
+yolov8n  | 2024-11-20T22:56:46.448134078Z                    all        593       1172      0.883      0.856      0.903      0.749
+yolov8n  | 2024-11-20T22:56:46.803090243Z
+yolov8n  | 2024-11-20T22:56:46.803133958Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      28/50     0.843G     0.4438     0.3978     0.9762         25        416: 100%|██████████| 511/511 [00:55<00:00,  9.26it/s]61/511 [00:49<00:05,  9.24it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.42it/s]
+yolov8n  | 2024-11-20T22:57:45.403524671Z                    all        593       1172      0.924      0.851      0.926      0.787
+yolov8n  | 2024-11-20T22:57:45.826516406Z
+yolov8n  | 2024-11-20T22:57:45.826567995Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      29/50     0.856G     0.4491     0.3954     0.9754         31        416: 100%|██████████| 511/511 [00:55<00:00,  9.26it/s]59/511 [00:49<00:05,  8.74it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.41it/s]
+yolov8n  | 2024-11-20T22:58:44.413302476Z                    all        593       1172      0.903      0.858      0.914      0.779
+yolov8n  | 2024-11-20T22:58:44.836251457Z
+yolov8n  | 2024-11-20T22:58:44.836274016Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      30/50     0.856G     0.4334     0.3818     0.9729         37        416: 100%|██████████| 511/511 [00:55<00:00,  9.25it/s]57/511 [00:49<00:05,  9.63it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.26it/s]
+yolov8n  | 2024-11-20T22:59:43.531605155Z                    all        593       1172      0.931      0.859      0.918      0.777
+yolov8n  | 2024-11-20T22:59:43.923790859Z
+yolov8n  | 2024-11-20T22:59:43.923825630Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      31/50     0.898G     0.4419     0.3876     0.9723         26        416: 100%|██████████| 511/511 [00:55<00:00,  9.26it/s]60/511 [00:49<00:05,  9.47it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.49it/s]
+yolov8n  | 2024-11-20T23:00:42.486654641Z                    all        593       1172      0.875      0.845      0.904       0.77
+yolov8n  | 2024-11-20T23:00:42.827039260Z
+yolov8n  | 2024-11-20T23:00:42.827098626Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      32/50     0.887G     0.4328     0.3785     0.9689         27        416: 100%|██████████| 511/511 [00:55<00:00,  9.28it/s]59/511 [00:49<00:05,  9.49it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.15it/s]
+yolov8n  | 2024-11-20T23:01:41.401300222Z                    all        593       1172      0.925      0.861       0.92      0.786
+yolov8n  | 2024-11-20T23:01:41.775322477Z
+yolov8n  | 2024-11-20T23:01:41.775346408Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      33/50     0.881G     0.4251     0.3709     0.9688         50        416: 100%|██████████| 511/511 [00:55<00:00,  9.26it/s]9.369495843Z <00:05,  8.99it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.14it/s]
+yolov8n  | 2024-11-20T23:02:40.470504215Z                    all        593       1172       0.91      0.854      0.923      0.798
+yolov8n  | 2024-11-20T23:02:40.873942069Z
+yolov8n  | 2024-11-20T23:02:40.873986675Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      34/50     0.824G     0.4246     0.3678     0.9666         40        416: 100%|██████████| 511/511 [00:55<00:00,  9.25it/s] 454/511 [00:49<00:06,  8.57it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.42it/s]
+yolov8n  | 2024-11-20T23:03:39.494426002Z                    all        593       1172      0.885       0.87      0.915      0.789
+yolov8n  | 2024-11-20T23:03:39.885373772Z
+yolov8n  | 2024-11-20T23:03:39.885452433Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      35/50     0.925G     0.4234     0.3661     0.9637         39        416: 100%|██████████| 511/511 [00:55<00:00,  9.24it/s]61/511 [00:50<00:05,  9.42it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.47it/s]
+yolov8n  | 2024-11-20T23:04:38.529755530Z                    all        593       1172      0.912      0.857      0.924      0.805
+yolov8n  | 2024-11-20T23:04:38.943723482Z
+yolov8n  | 2024-11-20T23:04:38.943759822Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      36/50     0.954G     0.4188     0.3588     0.9618         38        416: 100%|██████████| 511/511 [00:55<00:00,  9.19it/s]60/511 [00:50<00:05,  9.35it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.27it/s]
+yolov8n  | 2024-11-20T23:05:38.018817832Z                    all        593       1172      0.895      0.864      0.916       0.79
+yolov8n  | 2024-11-20T23:05:38.398771778Z
+yolov8n  | 2024-11-20T23:05:38.398812794Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      37/50     0.889G     0.4216     0.3584     0.9617         36        416: 100%|██████████| 511/511 [00:55<00:00,  9.19it/s]57/511 [00:49<00:05,  9.25it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.36it/s]
+yolov8n  | 2024-11-20T23:06:37.426352222Z                    all        593       1172      0.932       0.86      0.923      0.797
+yolov8n  | 2024-11-20T23:06:37.766470515Z
+yolov8n  | 2024-11-20T23:06:37.766510391Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      38/50     0.841G     0.4151     0.3538     0.9598         38        416: 100%|██████████| 511/511 [00:55<00:00,  9.22it/s]58/511 [00:49<00:05,  9.39it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.28it/s]
+yolov8n  | 2024-11-20T23:07:36.636913631Z                    all        593       1172      0.928      0.852      0.925      0.787
+yolov8n  | 2024-11-20T23:07:36.961708690Z
+yolov8n  | 2024-11-20T23:07:36.961760639Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      39/50     0.807G     0.4107     0.3521     0.9586         59        416: 100%|██████████| 511/511 [00:55<00:00,  9.24it/s]53/511 [00:49<00:06,  9.50it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.37it/s]
+yolov8n  | 2024-11-20T23:08:35.702328434Z                    all        593       1172      0.885      0.872      0.922      0.793
+yolov8n  | 2024-11-20T23:08:36.085374648Z
+yolov8n  | 2024-11-20T23:08:36.085398117Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      40/50     0.862G     0.4086     0.3428     0.9569         38        416: 100%|██████████| 511/511 [00:54<00:00,  9.34it/s]-20T23:08:43.505177209Z 66it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.51it/s]
+yolov8n  | 2024-11-20T23:09:34.138814375Z                    all        593       1172      0.888      0.868      0.927       0.81
+yolov8n  | 2024-11-20T23:09:34.515716475Z Closing dataloader mosaic
+yolov8n  | 2024-11-20T23:09:34.729069459Z
+yolov8n  | 2024-11-20T23:09:34.729184249Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      41/50     0.885G     0.4091     0.3284     0.9663         13        416: 100%|██████████| 511/511 [00:54<00:00,  9.34it/s]0T23:09:42.897793583Z 9.32it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.49it/s]
+yolov8n  | 2024-11-20T23:10:32.827546569Z                    all        593       1172      0.922      0.883      0.924      0.796
+yolov8n  | 2024-11-20T23:10:33.254737316Z
+yolov8n  | 2024-11-20T23:10:33.254774042Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      42/50     0.849G     0.4004     0.3177      0.963         21        416: 100%|██████████| 511/511 [00:54<00:00,  9.45it/s]Z /511 [00:52<00:02,  9.04it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.59it/s]
+yolov8n  | 2024-11-20T23:11:30.623656966Z                    all        593       1172      0.909      0.863       0.91      0.783
+yolov8n  | 2024-11-20T23:11:30.958261981Z
+yolov8n  | 2024-11-20T23:11:30.958302853Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      43/50     0.818G     0.3963     0.3084     0.9578         15        416: 100%|██████████| 511/511 [00:53<00:00,  9.46it/s]82/511 [00:50<00:03,  9.44it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.72it/s]
+yolov8n  | 2024-11-20T23:12:28.209841771Z                    all        593       1172      0.912      0.871      0.924      0.804
+yolov8n  | 2024-11-20T23:12:28.558083217Z
+yolov8n  | 2024-11-20T23:12:28.558121125Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      44/50     0.851G     0.3989     0.3061     0.9562         20        416: 100%|██████████| 511/511 [00:53<00:00,  9.47it/s]89/511 [00:51<00:02,  9.05it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.56it/s]
+yolov8n  | 2024-11-20T23:13:25.837989818Z                    all        593       1172      0.888      0.888      0.921      0.805
+yolov8n  | 2024-11-20T23:13:26.167958078Z
+yolov8n  | 2024-11-20T23:13:26.167998481Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      45/50     0.837G      0.391     0.3033     0.9553         13        416: 100%|██████████| 511/511 [00:54<00:00,  9.46it/s] 485/511 [00:51<00:02,  9.26it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.41it/s]
+yolov8n  | 2024-11-20T23:14:23.576111854Z                    all        593       1172      0.907      0.883      0.924      0.809
+yolov8n  | 2024-11-20T23:14:23.922195914Z
+yolov8n  | 2024-11-20T23:14:23.922231157Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      46/50      0.81G     0.3908     0.2956     0.9542         15        416: 100%|██████████| 511/511 [00:53<00:00,  9.47it/s]82042Z [00:50<00:03,  9.54it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.79it/s]
+yolov8n  | 2024-11-20T23:15:21.102123009Z                    all        593       1172       0.93       0.87      0.929      0.808
+yolov8n  | 2024-11-20T23:15:21.424422605Z
+yolov8n  | 2024-11-20T23:15:21.424505602Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      47/50     0.906G     0.3805     0.2864     0.9471         15        416: 100%|██████████| 511/511 [00:54<00:00,  9.43it/s]84/511 [00:51<00:02,  9.44it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.59it/s]
+yolov8n  | 2024-11-20T23:16:18.903157236Z                    all        593       1172       0.92      0.892      0.931       0.81
+yolov8n  | 2024-11-20T23:16:19.282846394Z
+yolov8n  | 2024-11-20T23:16:19.282886682Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      48/50     0.887G     0.3807     0.2834     0.9504         15        416: 100%|██████████| 511/511 [00:54<00:00,  9.45it/s]20T23:16:27.096835297Z .75it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.62it/s]
+yolov8n  | 2024-11-20T23:17:16.683888462Z                    all        593       1172        0.9      0.893       0.93      0.813
+yolov8n  | 2024-11-20T23:17:17.095828400Z
+yolov8n  | 2024-11-20T23:17:17.095864107Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      49/50     0.904G     0.3755     0.2801     0.9452         13        416: 100%|██████████| 511/511 [00:53<00:00,  9.50it/s]89/511 [00:51<00:02,  8.95it/s]]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.70it/s]
+yolov8n  | 2024-11-20T23:18:14.128039260Z                    all        593       1172      0.896      0.904      0.934      0.817
+yolov8n  | 2024-11-20T23:18:14.524207584Z
+yolov8n  | 2024-11-20T23:18:14.524232453Z       Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+      50/50     0.881G      0.375     0.2775     0.9453         10        416: 100%|██████████| 511/511 [00:54<00:00,  9.46it/s]81/511 [00:50<00:03,  9.45it/s]s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:03<00:00,  7.45it/s]
+yolov8n  | 2024-11-20T23:19:11.912510803Z                    all        593       1172      0.906      0.898      0.932       0.82
+yolov8n  | 2024-11-20T23:19:12.319025197Z
+yolov8n  | 2024-11-20T23:19:12.319067556Z 50 epochs completed in 0.793 hours.
+yolov8n  | 2024-11-20T23:19:12.509755268Z Optimizer stripped from /app/output/train/weights/last.pt, 6.2MB
+yolov8n  | 2024-11-20T23:19:12.709260317Z Optimizer stripped from /app/output/train/weights/best.pt, 6.2MB
+yolov8n  | 2024-11-20T23:19:12.709917164Z
+yolov8n  | 2024-11-20T23:19:12.709947098Z Validating /app/output/train/weights/best.pt...
+yolov8n  | 2024-11-20T23:19:12.710121045Z Ultralytics 8.3.34 🚀 Python-3.8.10 torch-1.12.1+cu113 CUDA:0 (NVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096MiB)
+yolov8n  | 2024-11-20T23:19:12.870752400Z Model summary (fused): 168 layers, 3,006,233 parameters, 0 gradients, 8.1 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 25/25 [00:04<00:00,  6.19it/s]
+yolov8n  | 2024-11-20T23:19:18.107024982Z                    all        593       1172      0.905      0.898      0.932       0.82
+yolov8n  | 2024-11-20T23:19:18.107092703Z               banknote        264        840      0.865      0.702      0.818      0.619
+yolov8n  | 2024-11-20T23:19:18.107102586Z                   coin        232        232      0.871      0.996      0.984       0.93
+yolov8n  | 2024-11-20T23:19:18.107174912Z                   card         97        100       0.98      0.995      0.993      0.912
+yolov8n  | 2024-11-20T23:19:18.978416518Z Speed: 0.2ms preprocess, 2.1ms inference, 0.0ms loss, 1.4ms postprocess per image
+yolov8n  | 2024-11-20T23:19:18.978468474Z Results saved to /app/output/train
+yolov8n  | 2024-11-20T23:19:20.070389031Z 💡 Learn more at https://docs.ultralytics.com/modes/train
+yolov8n  | 2024-11-20T23:19:21.580833261Z Finish training
+yolov8n exited with code 0

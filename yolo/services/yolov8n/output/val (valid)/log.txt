@@ -1,0 +1,22 @@
+[+] Running 1/1\mmcs\masters_degree\semester_3\nnmobile\lab3\neiron_money\yolo\services>run.bat
+ ✔ Container yolov8n  Started                                                                                                                                                                                 0.7s
+yolov8n  | 2024-11-20T23:25:29.588488046Z Start validating
+yolov8n  | 2024-11-20T23:25:30.533860361Z Creating new Ultralytics Settings v0.0.6 file ✅
+yolov8n  | 2024-11-20T23:25:30.533909785Z View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+yolov8n  | 2024-11-20T23:25:30.533913231Z Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+yolov8n  | 2024-11-20T23:25:30.726576103Z Ultralytics 8.3.34 🚀 Python-3.8.10 torch-1.12.1+cu113 CUDA:0 (NVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096MiB)
+yolov8n  | 2024-11-20T23:25:35.005303148Z Model summary (fused): 168 layers, 3,006,233 parameters, 0 gradients, 8.1 GFLOPs
+yolov8n  | 2024-11-20T23:25:35.981046814Z Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf'...
+100%|██████████| 755k/755k [00:00<00:00, 4.54MB/s]
+val: Scanning /app/dataset/valid/labels.cache... 593 images, 0 backgrounds, 0 corrupt: 100%|██████████| 593/593 [00:00<?, ?it/s]
+yolov8n  | 2024-11-20T23:25:39.263227183Z WARNING ⚠️ Box and segment counts should be equal, but got len(segments) = 55, len(boxes) = 1172. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 50/50 [00:05<00:00,  8.77it/s]
+yolov8n  | 2024-11-20T23:25:46.755882019Z                    all        593       1172      0.905      0.898      0.932       0.82
+yolov8n  | 2024-11-20T23:25:46.755930334Z               banknote        264        840      0.865      0.702      0.818      0.619
+yolov8n  | 2024-11-20T23:25:46.755936600Z                   coin        232        232      0.871      0.996      0.984       0.93
+yolov8n  | 2024-11-20T23:25:46.755939844Z                   card         97        100       0.98      0.995      0.993      0.912
+yolov8n  | 2024-11-20T23:25:47.987408950Z Speed: 0.2ms preprocess, 3.5ms inference, 0.0ms loss, 1.6ms postprocess per image
+yolov8n  | 2024-11-20T23:25:47.987434198Z Results saved to /app/output/val
+yolov8n  | 2024-11-20T23:25:47.987570847Z 💡 Learn more at https://docs.ultralytics.com/modes/val
+yolov8n  | 2024-11-20T23:25:48.876341243Z Finish validating
+yolov8n exited with code 0

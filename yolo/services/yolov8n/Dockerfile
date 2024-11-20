@@ -21,5 +21,6 @@ RUN apt-get install --no-install-recommends -y python3 build-essential python3-p
 RUN pip3 install networkx==3.1 && \
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu113 && \
     pip3 install ultralytics
+RUN pip3 install --no-cache-dir "tensorflow-cpu==2.13.1" "keras==2.13.1" "sng4onnx>=1.0.1" "onnx_graphsurgeon>=0.3.26" "onnx>=1.12.0" "onnx2tf>1.17.5,<=1.22.3" "onnxslim>=0.1.31" "tflite_support" "onnxruntime" --extra-index-url https://pypi.ngc.nvidia.com
 
 ENTRYPOINT [ "bash", "/app/scripts/run.sh" ]
