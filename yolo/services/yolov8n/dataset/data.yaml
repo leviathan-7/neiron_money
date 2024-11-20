@@ -1,6 +1,6 @@
 train: ../train/images
 val: ../valid/images
-test: ../test/images
+test: ../valid/images
 
 nc: 3
 names: ['banknote', 'coin', 'card' ]
